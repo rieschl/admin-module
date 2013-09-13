@@ -2,9 +2,9 @@
 
 namespace Midnight\Admin\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Form\Form;
 use Zend\Http\PhpEnvironment\Request;
+use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Navigation\Navigation;
 use Zend\Navigation\Service\ConstructedNavigationFactory;
 
@@ -58,5 +58,22 @@ abstract class AbstractAdminController extends AbstractActionController
             }
         }
         return null;
+    }
+
+    /**
+     * @param string $name
+     * @return EntityRepository
+     */
+    protected function getRepository($name)
+    {
+        return $this->getEntityManager()->getRepository($name);
+    }
+
+    /**
+     * @return EntityManager
+     */
+    protected function getEntityManager()
+    {
+        return $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
     }
 }
