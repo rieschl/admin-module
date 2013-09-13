@@ -1,0 +1,38 @@
+<?php /** @var $this \Zend\View\Renderer\PhpRenderer */ ?>
+<?= $this->doctype(); ?>
+<html>
+<head>
+    <meta charset="utf-8">
+    <?= $this->headTitle('RBO Admin')->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?= $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+    <?php
+    $this->headLink()
+        ->appendStylesheet('//fonts.googleapis.com/css?family=Droid+Sans:regular,bold&subset=latin')
+        ->appendStylesheet($this->basePath('admin/css/html5-reset-1.4.css'))
+        ->appendStylesheet($this->basePath('admin/css/base.css'))
+        ->appendStylesheet($this->basePath('admin/css/layout.css'))
+        ->appendStylesheet($this->basePath('admin/css/forms.css'))
+        ->appendStylesheet($this->basePath('admin/css/ui.css'));
+    $this->headScript()
+        ->prependFile('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+        ->appendFile($this->basePath('admin/js/ui.js'));
+    ?>
+    <?= $this->headLink() ?>
+</head>
+<body>
+<div class="app">
+    <?= $this->flashMessenger()->render(
+        \Zend\Mvc\Controller\Plugin\FlashMessenger::NAMESPACE_DEFAULT,
+        array('flash-messages')
+    ) ?>
+    <div class="top-bar">
+        <?= $this->render('layout/admin/navigation.phtml') ?>
+    </div>
+    <div class="main-area">
+        <?= $this->content ?>
+    </div>
+</div>
+<?= $this->headScript() ?>
+<?= $this->inlineScript() ?>
+</body>
+</html>

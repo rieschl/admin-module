@@ -1,0 +1,13 @@
+{
+    "name": "midnight/admin-module",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.3.3",
+        "zf-commons/zfc-admin": "~0.0.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Midnight\\Admin": "src"
+        }
+    }
+}

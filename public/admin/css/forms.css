@@ -1,0 +1,135 @@
+form, form * {
+  box-sizing: border-box; }
+form .form-row {
+  display: flex;
+  margin-bottom: .75em; }
+  form .form-row.submit {
+    padding-left: 10em;
+    margin-top: 1.5em; }
+form .label, form .form-row > label {
+  width: 10em;
+  text-align: right;
+  padding: 0.3em 0;
+  padding-right: .5em; }
+  form .label:after, form .form-row > label:after {
+    content: ':'; }
+
+/**
+ * labels-right
+ */
+.labels-right .form-row {
+  clear: both;
+  overflow: auto;
+  padding: 0.5em 0; }
+
+.labels-right label, .labels-right .label, .labels-right .inputs {
+  float: left;
+  display: block;
+  width: 80%; }
+
+.labels-right label, .labels-right .label {
+  width: 15%;
+  text-align: right;
+  margin-right: .5%; }
+
+.labels-right .checkbox {
+  margin-left: 15.5%; }
+
+.labels-right .checkbox label {
+  float: none;
+  display: inline; }
+
+.labels-right .form-row.submit {
+  padding-left: 15.5%;
+  background-color: rgba(128, 255, 128, 0.2);
+  border: solid 1px rgba(128, 255, 128, 0.4);
+  border-top: solid 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.05) inset; }
+
+/**
+ * labels-top
+ */
+.labels-top .form-row {
+  clear: both;
+  padding: 0.5em 0; }
+
+/**
+ * General
+ */
+input[type=text], input[type=tel], input[type=email], input[type=search], input[type=password], textarea {
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  padding: 0.1em 0.2em; }
+
+.inputs label {
+  width: auto;
+  text-align: inherit;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto; }
+
+textarea {
+  height: 5em; }
+
+input[type=text], input[type=tel], input[type=email], input[type=search], input[type=password] {
+  width: 20em; }
+
+fieldset {
+  margin: 1em 0;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
+  background: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
+  /*    border-top-left-radius:.5em;
+      border-top-right-radius:.5em;*/
+  border-top: solid 2px rgba(0, 0, 0, 0.2); }
+
+legend {
+  margin-left: 1em;
+  font-weight: bold;
+  border: solid 2px rgba(0, 0, 0, 0.2);
+  padding: 0.2em 0.5em;
+  background-color: #fff;
+  border-radius: .3em;
+  min-width: 10%; }
+
+label {
+  font-weight: normal; }
+
+/**
+ * Classes
+ */
+.ajax-dropdown {
+  list-style: none;
+  background-color: #fff;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); }
+
+.ajax-dropdown li {
+  padding: 0.3em 0.4em;
+  border-top: solid 1px rgba(0, 0, 0, 0.3); }
+
+.ajax-dropdown li:first-child {
+  border-top: none; }
+
+/**
+ * General
+ */
+form {
+  margin-bottom: 1em; }
+
+/**
+ * Two-column form
+ */
+form.two-cols .left, form.two-cols .right {
+  width: 50%; }
+
+form.two-cols .left {
+  float: left; }
+
+form.two-cols .right {
+  float: right; }
