@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin\View\Helper;
+namespace Midnight\Admin\View\Helper;
 
 use Zend\Form\ElementInterface;
 use Zend\View\Helper\AbstractHelper;

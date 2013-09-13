@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin\Controller;
+namespace Midnight\Admin\Controller;
 
 class AdminController extends AbstractAdminController
 {

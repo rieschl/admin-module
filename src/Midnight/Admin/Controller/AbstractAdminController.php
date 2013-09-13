@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin\Controller;
+namespace Midnight\Admin\Controller;
 
 use Rbo\Controller\RboController;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin;
+namespace Midnight\Admin;
 
 return array(
     'router' => array(
@@ -8,7 +8,7 @@ return array(
             'zfcadmin' => array(
                 'options' => array(
                     'defaults' => array(
-                        'controller' => 'Admin\Controller\Admin',
+                        'controller' => 'Midnight\Admin\Controller\Admin',
                     ),
                 ),
             ),
@@ -16,7 +16,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Admin\Controller\Admin' => 'Admin\Controller\AdminController'
+            'Midnight\Admin\Controller\Admin' => 'Midnight\Admin\Controller\AdminController'
         ),
     ),
     'view_manager' => array(
@@ -33,22 +33,11 @@ return array(
     ),
     'view_helpers' => array(
         'invokables' => array(
-            'formRow' => 'Admin\View\Helper\FormRow',
+            'formRow' => 'Midnight\Admin\View\Helper\FormRow',
         ),
     ),
     'navigation' => array(
         'admin' => array(
-            'content' => array('label' => 'Content', 'uri' => 'http://www.rbo.at/admin/cms'),
-            'overview' => array('label' => 'Übersicht', 'uri' => 'http://www.rbo.at/admin'),
-            'newsletter' => array('label' => 'Newsletter', 'uri' => 'http://www.rbo.at/admin/newsletter'),
-            'forum' => array('label' => 'Forum', 'uri' => 'http://www.rbo.at/admin/forum'),
-            'users' => array('label' => 'Benutzer', 'uri' => 'http://www.rbo.at/admin/users'),
-            'catalog' => array('label' => 'Katalogbestellungen', 'uri' => 'http://www.rbo.at/admin/catalog-orders'),
-            'email' => array('label' => 'E-Mail', 'uri' => 'http://www.rbo.at/admin/email'),
-            'settings' => array('label' => 'Einstellungen', 'uri' => 'http://www.rbo.at/admin/settings'),
-            'redirects' => array('label' => 'Weiterleitungen', 'uri' => 'http://www.rbo.at/admin/redirects'),
-            'logout' => array('label' => 'Logout', 'route' => 'user/logout'),
-            'homepage' => array('label' => 'Zur Homepage', 'uri' => 'http://www.rbo.at/'),
         ),
     ),
 );

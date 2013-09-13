@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin;
+namespace Midnight\Admin;
 
 use Zend\Authentication\AuthenticationService;
 use Zend\Mvc\ModuleRouteListener;
