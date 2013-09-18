@@ -2,6 +2,7 @@
 
 namespace Midnight\Admin\Controller;
 
+use Doctrine\ORM\EntityManager;
 use Zend\Form\Form;
 use Zend\Http\PhpEnvironment\Request;
 use Zend\Mvc\Controller\AbstractActionController;
