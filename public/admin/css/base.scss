@@ -223,3 +223,11 @@ letter-spacing:.1em;
 tr.highlight td {
     background-color: #ffc;
 }
+
+tr {
+    &:hover {
+        td {
+            background-color: rgba(0, 0, 0, .03);
+        }
+    }
+}
