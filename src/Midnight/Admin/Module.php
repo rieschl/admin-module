@@ -5,6 +5,7 @@ namespace Midnight\Admin;
 use Zend\Authentication\AuthenticationService;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Zend\Session\Container;
 
 class Module
 {
@@ -32,6 +33,19 @@ class Module
                         // It automatically short-circuit the Application running
                         return $response;
                     }
+                }
+            }
+        );
+
+        $eventManager->attach(
+            MvcEvent::EVENT_DISPATCH,
+            function (MvcEvent $e) {
+                $route_match = $e->getRouteMatch();
+                $route_name = $route_match->getMatchedRouteName();
+                $parts = explode('/', $route_name);
+                if ($parts[0] === 'zfcadmin') {
+                    $session = new Session();
+                    $session->setLastAdminPage($route_name, $route_match->getParams());
                 }
             }
         );

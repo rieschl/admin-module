@@ -34,10 +34,10 @@ return array(
     'view_helpers' => array(
         'invokables' => array(
             'formRow' => 'Midnight\Admin\View\Helper\FormRow',
+            'backToAdminLink' => 'Midnight\Admin\View\Helper\BackToAdminLink',
         ),
     ),
     'navigation' => array(
-        'admin' => array(
-        ),
+        'admin' => array(),
     ),
 );
