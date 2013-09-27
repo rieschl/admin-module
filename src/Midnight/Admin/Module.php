@@ -18,6 +18,9 @@ class Module
         $eventManager->attach(
             MvcEvent::EVENT_ROUTE,
             function (MvcEvent $e) {
+                if (!$e->getApplication()->getServiceManager()->has('auth')) {
+                    return;
+                }
                 /** @var $auth_service AuthenticationService */
                 $auth_service = $e->getApplication()->getServiceManager()->get('auth');
                 if (!$auth_service->hasIdentity()) {
