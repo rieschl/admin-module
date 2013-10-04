@@ -1,0 +1,32 @@
+.tabbed {
+  display: flex;
+  border: solid 1px #cccccc;
+  border-radius: .2em; }
+  .tabbed > .tabs {
+    flex: 0 0 20em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-right: solid 1px #dddddd;
+    background-color: rgba(0, 0, 0, 0.03); }
+    .tabbed > .tabs > li {
+      margin: 0;
+      padding: 0; }
+      .tabbed > .tabs > li.active {
+        font-weight: bold; }
+        .tabbed > .tabs > li.active a {
+          background-color: white; }
+    .tabbed > .tabs a {
+      display: block;
+      padding: .5em;
+      color: inherit;
+      text-decoration: inherit;
+      border-bottom: solid 1px rgba(0, 0, 0, 0.05); }
+      .tabbed > .tabs a:hover {
+        background-color: white; }
+  .tabbed > article {
+    display: none;
+    flex: 1 0 auto;
+    padding: 0.5em 1em; }
+    .tabbed > article.active {
+      display: block; }
