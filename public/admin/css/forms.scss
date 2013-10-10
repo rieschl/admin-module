@@ -71,7 +71,7 @@ form {
 /**
  * General
  */
-input[type=text], input[type=tel], input[type=email], input[type=search], input[type=password], textarea {
+input[type=text], input[type=tel], input[type=email], input[type=search], input[type=password], input[type=number], textarea {
     border: solid 1px rgba(0, 0, 0, .3);
     border-radius: 3px;
     padding: .1em .2em;
@@ -93,6 +93,10 @@ textarea {
 
 input[type=text], input[type=tel], input[type=email], input[type=search], input[type=password] {
     width: 20em;
+}
+
+input[type=number] {
+    width: 6em;
 }
 
 fieldset {
