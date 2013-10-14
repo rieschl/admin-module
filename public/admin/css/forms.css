@@ -80,24 +80,15 @@ input[type=number] {
   width: 6em; }
 
 fieldset {
-  margin: 1em 0;
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
-  background: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
-  /*    border-top-left-radius:.5em;
-      border-top-right-radius:.5em;*/
-  border-top: solid 2px rgba(0, 0, 0, 0.2); }
+  margin-bottom: 1.5em;
+  border-top: solid 1px #cccccc; }
 
 legend {
-  margin-left: 1em;
+  font-size: 1em;
   font-weight: bold;
-  border: solid 2px rgba(0, 0, 0, 0.2);
-  padding: 0.2em 0.5em;
-  background-color: #fff;
-  border-radius: .3em;
-  min-width: 10%; }
+  line-height: inherit;
+  padding-right: .5em;
+  margin-bottom: 0.75em; }
 
 label {
   font-weight: normal; }
