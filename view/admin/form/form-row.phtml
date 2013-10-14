@@ -1,6 +1,7 @@
 <?php
 /** @var $this \Zend\View\Renderer\PhpRenderer */
 /** @var $element \Zend\Form\ElementInterface */
+$prefix = $element->getOption('prefix');
 $suffix = $element->getOption('suffix');
 ?>
 <?php if ($element instanceof \Zend\Form\Element\Submit): ?>
@@ -13,10 +14,9 @@ $suffix = $element->getOption('suffix');
             <?= $this->formLabel($element) ?>
         <?php endif ?>
         <div class="inputs">
+            <?php if ($prefix): ?><?= $prefix ?><?php endif ?>
             <?= $this->formElement($element) ?>
-            <?php if ($suffix): ?>
-                <?= $suffix ?>
-            <?php endif ?>
+            <?php if ($suffix): ?><?= $suffix ?><?php endif ?>
         </div>
         <?php
         $messages = $element->getMessages();
