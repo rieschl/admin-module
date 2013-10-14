@@ -1,7 +1,7 @@
 <?php
 /** @var $this \Zend\View\Renderer\PhpRenderer */
 /** @var $element \Zend\Form\ElementInterface */
-$postfix = $element->getOption('postfix');
+$suffix = $element->getOption('suffix');
 ?>
 <?php if ($element instanceof \Zend\Form\Element\Submit): ?>
     <div class="form-row submit">
@@ -14,8 +14,8 @@ $postfix = $element->getOption('postfix');
         <?php endif ?>
         <div class="inputs">
             <?= $this->formElement($element) ?>
-            <?php if ($postfix): ?>
-                <?= $postfix ?>
+            <?php if ($suffix): ?>
+                <?= $suffix ?>
             <?php endif ?>
         </div>
         <?php
