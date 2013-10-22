@@ -28,6 +28,9 @@ dt {
     clear: both;
     padding: .5em 1%;
     color: #999;
+    &:after {
+        content: ':';
+    }
 }
 
 dd {

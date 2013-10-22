@@ -25,6 +25,8 @@ dt {
   clear: both;
   padding: 0.5em 1%;
   color: #999; }
+  dt:after {
+    content: ':'; }
 
 dd {
   float: left;
