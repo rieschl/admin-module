@@ -4,7 +4,11 @@ $(function () {
         domStickyOptions;
     // Sticky page options
     $(document).bind('scroll', function (e) {
-        var viewportOffset = domPageOptions.offset()['top'] - $(document).scrollTop();
+        var viewportOffset;
+        if (domPageOptions.length === 0) {
+            return;
+        }
+        viewportOffset = domPageOptions.offset()['top'] - $(document).scrollTop();
         if (viewportOffset < 0) {
             if (!domStickyOptions) {
                 domStickyOptions = domPageOptions
