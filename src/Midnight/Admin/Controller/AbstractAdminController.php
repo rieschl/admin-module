@@ -35,15 +35,19 @@ abstract class AbstractAdminController extends AbstractActionController
             );
             $options = $options + $extra2;
         }
-        $documentManager = $this->getEntityManager();
+        if ($options && isset($options['object_manager'])) {
+            $objectManager = $options['object_manager'];
+        } else {
+            $objectManager = $this->getEntityManager();
+        }
         /** @var $request Request */
         $request = $this->getRequest();
         if ($request->isPost()) {
             $form->setData($request->getPost());
             if ($form->isValid()) {
                 $form->bindValues();
-                $documentManager->persist($form->getObject());
-                $documentManager->flush();
+                $objectManager->persist($form->getObject());
+                $objectManager->flush();
                 if (!empty($options['success_message'])) {
                     $this->flashMessenger()->addMessage($options['success_message']);
                 }
@@ -63,19 +67,19 @@ abstract class AbstractAdminController extends AbstractActionController
     }
 
     /**
+     * @return EntityManager
+     */
+    protected function getEntityManager()
+    {
+        return $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+    }
+
+    /**
      * @param string $name
      * @return EntityRepository
      */
     protected function getRepository($name)
     {
         return $this->getEntityManager()->getRepository($name);
-    }
-
-    /**
-     * @return EntityManager
-     */
-    protected function getEntityManager()
-    {
-        return $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
     }
 }
