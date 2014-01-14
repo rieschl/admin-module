@@ -25,6 +25,10 @@
         \Zend\Mvc\Controller\Plugin\FlashMessenger::NAMESPACE_DEFAULT,
         array('flash-messages')
     ) ?>
+    <?= $this->flashMessenger()->render(
+        \Zend\Mvc\Controller\Plugin\FlashMessenger::NAMESPACE_ERROR,
+        array('flash-messages', 'errors')
+    ) ?>
     <div class="top-bar">
         <?= $this->render('layout/admin/navigation.phtml') ?>
     </div>

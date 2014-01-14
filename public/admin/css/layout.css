@@ -239,3 +239,5 @@ ul.links a:hover {
     margin: 0; }
   .flash-messages.hidden {
     opacity: 0; }
+.flash-messages.errors {
+    background-color: rgba(127, 0, 0, .5); }

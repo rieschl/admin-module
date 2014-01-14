@@ -271,4 +271,7 @@ ul.links a:hover {
     &.hidden {
         opacity: 0;
     }
+    &.errors {
+        background-color: rgba(127, 0, 0, .5);
+    }
 }
