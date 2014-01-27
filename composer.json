@@ -3,7 +3,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.3.3",
-        "zf-commons/zfc-admin": "~0.1"
+        "zf-commons/zfc-admin": "~0.1",
+        "midnight/user-module": "~0.1"
     },
     "autoload": {
         "psr-0": {
