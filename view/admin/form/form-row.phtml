@@ -24,5 +24,8 @@ $suffix = $element->getOption('suffix');
         <?php if (!empty($messages)): ?>
             <?= $this->formElementErrors($element, array('class' => 'errors')) ?>
         <?php endif ?>
+        <?php if ($element->getOption('info')): ?>
+            <p class="info"><?= $element->getOption('info') ?></p>
+        <?php endif ?>
     </div>
 <?php endif ?>
