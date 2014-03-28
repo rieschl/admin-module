@@ -14,8 +14,8 @@ function getAnchorName($page)
     return preg_replace('/[^a-zA-Z]/', '-', strtolower($page['label']));
 }
 
-$this->headLink()->appendStylesheet($this->basePath('admin/css/tabs.css'));
-$this->headScript()->appendFile($this->basePath('admin/js/tabs.js'));
+$this->headLink()->appendStylesheet($this->basePath('css/admin/tabs.css'));
+$this->headScript()->appendFile($this->basePath('css/admin/tabs.js'));
 ?>
 <div class="tabbed">
     <ul class="tabs">

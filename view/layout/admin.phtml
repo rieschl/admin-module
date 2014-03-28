@@ -8,24 +8,26 @@
     <?php
     $this->headLink()
         ->appendStylesheet('//fonts.googleapis.com/css?family=Droid+Sans:regular,bold&subset=latin')
-        ->appendStylesheet($this->basePath('admin/css/html5-reset-1.4.css'))
-        ->appendStylesheet($this->basePath('admin/css/base.css'))
-        ->appendStylesheet($this->basePath('admin/css/layout.css'))
-        ->appendStylesheet($this->basePath('admin/css/forms.css'))
-        ->appendStylesheet($this->basePath('admin/css/ui.css'));
+        ->appendStylesheet($this->basePath('css/admin/html5-reset-1.4.css'))
+        ->appendStylesheet($this->basePath('css/admin/base.css'))
+        ->appendStylesheet($this->basePath('css/admin/layout.css'))
+        ->appendStylesheet($this->basePath('css/admin/forms.css'))
+        ->appendStylesheet($this->basePath('css/admin/ui.css'));
     $this->headScript()
         ->prependFile('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
-        ->appendFile($this->basePath('admin/js/ui.js'));
+        ->appendFile($this->basePath('js/admin/ui.js'));
     ?>
     <?= $this->headLink() ?>
 </head>
 <body>
 <div class="app">
-    <?= $this->flashMessenger()->render(
+    <?=
+    $this->flashMessenger()->render(
         \Zend\Mvc\Controller\Plugin\FlashMessenger::NAMESPACE_DEFAULT,
         array('flash-messages')
     ) ?>
-    <?= $this->flashMessenger()->render(
+    <?=
+    $this->flashMessenger()->render(
         \Zend\Mvc\Controller\Plugin\FlashMessenger::NAMESPACE_ERROR,
         array('flash-messages', 'errors')
     ) ?>
