@@ -1,0 +1,21 @@
+<?php
+/**
+ * @var \Zend\View\Renderer\PhpRenderer $this
+ * @var \Zend\Form\ElementInterface     $element
+ * @var string                          $label
+ * @var array                           $labelAttributes
+ * @var string                          $labelPosition
+ * @var bool                            $renderErrors
+ */
+?>
+<div class="form-row checkbox">
+    <div class="inputs">
+        <?= $this->formLabel()->openTag($element) ?>
+        <?= $this->formCheckbox($element) ?>
+        <?= $label ?>
+        <?= $this->formLabel()->closeTag($element) ?>
+    </div>
+    <?php if ($renderErrors): ?>
+        <?= $this->formElementErrors($element, array('class' => 'error')) ?>
+    <?php endif ?>
+</div>

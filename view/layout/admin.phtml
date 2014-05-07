@@ -1,0 +1,28 @@
+<?php /** @var $this \Zend\View\Renderer\PhpRenderer */ ?>
+<?= $this->doctype(); ?>
+<html>
+<head>
+    <meta charset="utf-8">
+    <?= $this->headTitle('Admin')->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?= $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+    <?php
+    $this->headLink()
+        ->appendStylesheet('//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700')
+        ->appendStylesheet($this->basePath('css/midnight/admin-module/normalize.css'))
+        ->appendStylesheet($this->basePath('css/midnight/admin-module/layout.css'))
+        ->appendStylesheet($this->basePath('css/midnight/admin-module/base.css'))
+        ->appendStylesheet($this->basePath('css/midnight/admin-module/forms.css'));
+    $this->headScript()
+        ->prependFile('//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js');
+    ?>
+    <?= $this->headLink() ?>
+</head>
+<body>
+<?= $this->render('layout/admin/banner.phtml') ?>
+<main role="main">
+    <?= $this->content ?>
+</main>
+<?= $this->headScript() ?>
+<?= $this->inlineScript() ?>
+</body>
+</html>
