@@ -1,0 +1,29 @@
+@import "imports";
+
+form {
+    &.labels-top {
+        .form-row {
+            margin-bottom: lh(1);
+        }
+    }
+    &.labels-right, &.labels-left {
+        .form-row {
+            display: flex;
+        }
+        label, .label {
+            width: 10em;
+        }
+    }
+}
+
+label, .label {
+    &:after {
+        content: ':';
+    }
+}
+
+input {
+    &[type=submit] {
+        @include button-primary;
+    }
+}

@@ -1,0 +1,11 @@
+@import "imports";
+
+html {
+    font-size: .9em;
+    font-family: 'Open Sans', sans-serif;
+    line-height: $line-height;
+}
+
+button, a[href].button, input[type=submit] {
+    @include button;
+}

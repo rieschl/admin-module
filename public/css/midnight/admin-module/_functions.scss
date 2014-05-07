@@ -1,0 +1,5 @@
+@import "vars";
+
+@function lh($n) {
+    @return $line-height * $n * 1rem;
+}

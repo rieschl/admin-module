@@ -1,6 +1,6 @@
 <?php
 
-namespace Midnight\Admin;
+namespace Midnight\AdminModule;
 
 return array(
     'router' => array(
@@ -8,7 +8,7 @@ return array(
             'zfcadmin' => array(
                 'options' => array(
                     'defaults' => array(
-                        'controller' => 'Midnight\Admin\Controller\Admin',
+                        'controller' => __NAMESPACE__ . 'Admin',
                     ),
                 ),
             ),
@@ -16,7 +16,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Midnight\Admin\Controller\Admin' => 'Midnight\Admin\Controller\AdminController'
+            __NAMESPACE__ . 'Admin' => __NAMESPACE__ . '\Controller\AdminController',
         ),
     ),
     'view_manager' => array(
@@ -27,17 +27,15 @@ return array(
     'asset_manager' => array(
         'resolver_configs' => array(
             'paths' => array(
-                __DIR__ . '/../public',
+                dirname(__DIR__) . '/public',
             ),
         ),
     ),
     'view_helpers' => array(
         'invokables' => array(
-            'formRow' => 'Midnight\Admin\View\Helper\FormRow',
-            'backToAdminLink' => 'Midnight\Admin\View\Helper\BackToAdminLink',
+            'adminForm' => 'Zend\Form\View\Helper\Form',
+            'adminFormRow' => 'Midnight\AdminModule\View\Helper\Form\FormRow',
+            'formRow' => 'Midnight\AdminModule\View\Helper\Form\FormRow',
         ),
-    ),
-    'navigation' => array(
-        'admin' => array(),
     ),
 );

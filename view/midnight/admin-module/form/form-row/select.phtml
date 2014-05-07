@@ -1,0 +1,21 @@
+<?php
+/**
+ * @var \Zend\View\Renderer\PhpRenderer $this
+ * @var \Zend\Form\ElementInterface     $element
+ * @var string                          $label
+ * @var array                           $labelAttributes
+ * @var string                          $labelPosition
+ * @var bool                            $renderErrors
+ */
+?>
+<div class="form-row">
+    <?php if ($element->getLabel()): ?>
+        <?= $this->formLabel($element) ?>
+    <?php endif ?>
+    <div class="inputs">
+        <?= $this->formSelect($element) ?>
+    </div>
+    <?php if ($renderErrors): ?>
+        <?= $this->formElementErrors($element, array('class' => 'error')) ?>
+    <?php endif ?>
+</div>
