@@ -1,0 +1,25 @@
+<?php
+/**
+ * @var \Zend\View\Renderer\PhpRenderer $this
+ * @var \Zend\Form\ElementInterface     $element
+ * @var string                          $label
+ * @var array                           $labelAttributes
+ * @var string                          $labelPosition
+ * @var bool                            $renderErrors
+ */
+?>
+<?php if ($element instanceof \Zend\Form\Element\Radio): ?>
+    <?= $this->render('midnight/admin-module/form/form-row/radio.phtml') ?>
+<?php elseif ($element instanceof \Zend\Form\Element\MultiCheckbox): ?>
+    <?= $this->render('midnight/admin-module/form/form-row/multi-checkbox.phtml') ?>
+<?php elseif ($element instanceof \Zend\Form\Element\Checkbox): ?>
+    <?= $this->render('midnight/admin-module/form/form-row/checkbox.phtml') ?>
+<?php elseif ($element instanceof \Zend\Form\Element\Select): ?>
+    <?= $this->render('midnight/admin-module/form/form-row/select.phtml') ?>
+<?php elseif ($element instanceof \Zend\Form\Element\Hidden): ?>
+    <?= $this->formElement($element) ?>
+<?php elseif ($element instanceof \Zend\Form\Element\Submit): ?>
+    <?= $this->render('midnight/admin-module/form/form-row/submit.phtml') ?>
+<?php else: ?>
+    <?= $this->render('midnight/admin-module/form/form-row/default.phtml') ?>
+<?php endif ?>
