@@ -32,6 +32,13 @@
     }
 }
 
+@mixin button-small {
+    @include button;
+    font-size: .6em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 @mixin list-killer {
     list-style: none;
     margin-top: 0;
