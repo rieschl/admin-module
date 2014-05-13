@@ -19,6 +19,11 @@
 </head>
 <body>
 <?= $this->render('layout/admin/banner.phtml') ?>
+<?= $this->flashMessenger()->render(\Zend\Mvc\Controller\Plugin\FlashMessenger::NAMESPACE_SUCCESS, array('flash-messages', 'success')) ?>
+<?= $this->flashMessenger()->render(\Zend\Mvc\Controller\Plugin\FlashMessenger::NAMESPACE_WARNING, array('flash-messages', 'warning')) ?>
+<?= $this->flashMessenger()->render(\Zend\Mvc\Controller\Plugin\FlashMessenger::NAMESPACE_ERROR, array('flash-messages', 'error')) ?>
+<?= $this->flashMessenger()->render(\Zend\Mvc\Controller\Plugin\FlashMessenger::NAMESPACE_INFO, array('flash-messages')) ?>
+<?= $this->flashMessenger()->render(\Zend\Mvc\Controller\Plugin\FlashMessenger::NAMESPACE_DEFAULT, array('flash-messages')) ?>
 <main role="main">
     <?= $this->content ?>
 </main>

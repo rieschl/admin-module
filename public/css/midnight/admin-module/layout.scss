@@ -26,6 +26,33 @@
     }
 }
 
+.flash-messages {
+    @mixin flash-messages($color) {
+        background-color: desaturate(lighten($color, 40%), 40%);
+        color: desaturate(darken($color, 30%), 40%);
+        border-color: desaturate(darken($color, 30%), 40%);
+    }
+    @include list-killer;
+    padding: lh(.5) lh(1);
+    border-bottom: solid 1px;
+    font-weight: bold;
+    li {
+        margin-bottom: lh(.5);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &.success {
+        @include flash-messages(#0f0);
+    }
+    &.warning {
+        @include flash-messages(#ff0);
+    }
+    &.error {
+        @include flash-messages(#f00);
+    }
+}
+
 [role=main] {
     padding: 1rem;
     & > h1:first-of-type {
