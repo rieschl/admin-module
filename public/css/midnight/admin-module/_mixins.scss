@@ -10,7 +10,7 @@
     background: $background-color linear-gradient(to bottom, rgba(255, 255, 255, .05), rgba(0, 0, 0, .05));
     border: solid 1px rgba(0, 0, 0, .3);
     box-shadow: 0 0 1px white inset;
-    border-radius: .2em;
+    border-radius: .2rem;
     line-height: 1;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, .5);
     &:hover, &:focus {
@@ -37,6 +37,17 @@
     font-size: .6em;
     text-transform: uppercase;
     font-weight: bold;
+}
+
+@mixin button-danger {
+    $background-color: hsl(0, 80%, 70%);
+    @include button;
+    background-color: $background-color;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+    &:hover {
+        @include button-hover($background-color);
+    }
 }
 
 @mixin list-killer {
