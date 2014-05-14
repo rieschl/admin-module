@@ -17,9 +17,14 @@
         @include button-hover($background-color);
     }
     &:active {
-        position: relative;
-        top: 1px;
-        left: 1px;
+        -webkit-transform: scale(.95);
+        -moz-transform: scale(.95);
+        -ms-transform: scale(.95);
+        -o-transform: scale(.95);
+        transform: scale(.95);
+    }
+    &:focus {
+        outline: none;
     }
 }
 

@@ -1,5 +1,7 @@
 form.labels-top .form-row {
   margin-bottom: 1.5rem; }
+  form.labels-top .form-row:last-of-type {
+    margin-bottom: 0; }
 form.labels-right .form-row, form.labels-left .form-row {
   display: flex; }
 form.labels-right label, form.labels-right .label, form.labels-left label, form.labels-left .label {
@@ -22,8 +24,25 @@ input[type=submit] {
   input[type=submit]:hover, input[type=submit]:focus {
     background-color: white; }
   input[type=submit]:active {
-    position: relative;
-    top: 1px;
-    left: 1px; }
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    transform: scale(0.95); }
+  input[type=submit]:focus {
+    outline: none; }
   input[type=submit]:hover {
     background-color: #e7f4c8; }
+input[type=radio] {
+  cursor: pointer; }
+
+.form-row.radio input[type=radio] {
+  display: inline-block;
+  margin-right: .2em; }
+.form-row.radio label {
+  display: inline-block;
+  margin-right: 1.5rem;
+  cursor: pointer; }
+  .form-row.radio label:after {
+    content: '';
+    display: none; }

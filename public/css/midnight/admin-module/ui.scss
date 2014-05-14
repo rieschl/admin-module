@@ -1,0 +1,71 @@
+.dialog-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 10;
+    text-align: center;
+    line-height: 1.5;
+    .dialog {
+        display: inline-block;
+        margin: auto;
+        max-height: 60vh;
+        margin-top: 20vh;
+        overflow: auto;
+        background-color: white;
+        max-width: 80em;
+        min-width: 20em;
+        font-size: 14px;
+        text-align: left;
+        box-shadow: 0 0 1em rgba(0, 0, 0, .3);
+        padding: 1.5em;
+        position: relative;
+        & > *:first-child {
+            margin-top: 0;
+        }
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+        a {
+            color: #00b3ff;
+        }
+        input {
+            &[type=number] {
+                font-size: inherit;
+                padding: .2em;
+            }
+        }
+        & > .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            text-indent: -9999px;
+            width: .9cm;
+            height: .9cm;
+            background: none;
+            font-size: .7cm;
+            line-height: .75cm;
+            color: #333;
+            opacity: .7;
+            font-weight: bold;
+            border: none;
+            &:after {
+                content: '\00D7';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                text-indent: 0;
+            }
+            &:hover {
+                opacity: .9;
+            }
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+}

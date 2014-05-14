@@ -80,6 +80,10 @@
     .page-options a:hover, .page-options a:focus {
       background-color: white; }
     .page-options a:active {
-      position: relative;
-      top: 1px;
-      left: 1px; }
+      -webkit-transform: scale(0.95);
+      -moz-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+      -o-transform: scale(0.95);
+      transform: scale(0.95); }
+    .page-options a:focus {
+      outline: none; }

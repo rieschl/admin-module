@@ -16,6 +16,8 @@
     <?= $this->render('midnight/admin-module/form/form-row/checkbox.phtml') ?>
 <?php elseif ($element instanceof \Zend\Form\Element\Select): ?>
     <?= $this->render('midnight/admin-module/form/form-row/select.phtml') ?>
+<?php elseif ($element instanceof \Zend\Form\Element\File): ?>
+    <?= $this->render('midnight/admin-module/form/form-row/file.phtml') ?>
 <?php elseif ($element instanceof \Zend\Form\Element\Hidden): ?>
     <?= $this->formElement($element) ?>
 <?php elseif ($element instanceof \Zend\Form\Element\Submit): ?>

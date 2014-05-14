@@ -4,6 +4,9 @@ form {
     &.labels-top {
         .form-row {
             margin-bottom: lh(1);
+            &:last-of-type {
+                margin-bottom: 0;
+            }
         }
     }
     &.labels-right, &.labels-left {
@@ -25,5 +28,26 @@ label, .label {
 input {
     &[type=submit] {
         @include button-primary;
+    }
+    &[type=radio] {
+        cursor: pointer;
+    }
+}
+
+.form-row {
+    &.radio {
+        input[type=radio] {
+            display: inline-block;
+            margin-right: .2em;
+        }
+        label {
+            display: inline-block;
+            margin-right: lh(1);
+            cursor: pointer;
+            &:after {
+                content: '';
+                display: none;
+            }
+        }
     }
 }
