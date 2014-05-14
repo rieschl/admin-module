@@ -2,13 +2,19 @@
 
 namespace Midnight\AdminModule;
 
-use Zend\Authentication\AuthenticationService;
-use Zend\Mvc\ModuleRouteListener;
-use Zend\Mvc\MvcEvent;
-use Zend\Session\Container;
+use Zend\ModuleManager\Feature\DependencyIndicatorInterface;
 
-class Module
+class Module implements DependencyIndicatorInterface
 {
+    /**
+     * Expected to return an array of modules on which the current one depends on
+     *
+     * @return array
+     */
+    public function getModuleDependencies()
+    {
+        return array('ZfcAdmin', 'AssetManager');
+    }
 
     public function getConfig()
     {
