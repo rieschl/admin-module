@@ -38,4 +38,11 @@ return array(
             'formRow' => 'Midnight\AdminModule\View\Helper\Form\FormRow',
         ),
     ),
+    'zfc_rbac' => array(
+        'guards' => array(
+            'ZfcRbac\Guard\RouteGuard' => array(
+                'zfcadmin*' => array('admin'),
+            ),
+        ),
+    ),
 );
