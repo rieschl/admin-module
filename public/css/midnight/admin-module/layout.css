@@ -50,6 +50,13 @@
     margin-top: 0;
     font-weight: normal;
     font-size: 3rem; }
+  [role=main] a.up:first-of-type {
+    color: inherit;
+    text-decoration: inherit;
+    display: block;
+    margin-bottom: -.75rem; }
+    [role=main] a.up:first-of-type:before {
+      content: '\2190'; }
 
 .page-options {
   list-style: none;

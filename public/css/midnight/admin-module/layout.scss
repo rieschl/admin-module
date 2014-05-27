@@ -60,6 +60,15 @@
         font-weight: normal;
         font-size: 3rem;
     }
+    a.up:first-of-type {
+        color: inherit;
+        text-decoration: inherit;
+        display: block;
+        margin-bottom: -.75rem;
+        &:before {
+            content: '\2190';
+        }
+    }
 }
 
 .page-options {
