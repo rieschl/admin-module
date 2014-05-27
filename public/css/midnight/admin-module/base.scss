@@ -9,3 +9,59 @@ html {
 button, a[href].button, input[type=submit] {
     @include button;
 }
+
+h2 {
+    font-weight: normal;
+    font-size: (1.2 * 1em);
+    margin-bottom: 0;
+    margin-top: 3rem;
+    clear: left;
+}
+
+table {
+    width: 100%;
+    a {
+        text-decoration: inherit;
+    }
+}
+
+td, th {
+    padding: (1.5rem / 2 / 2);
+}
+
+th {
+    text-align: left;
+    border-bottom: solid 1px lightgrey;
+    font-weight: bold;
+    font-size: (1em /1.2);
+    text-transform: uppercase;
+    opacity: .8;
+}
+
+tbody {
+    tr:nth-child(even) {
+        td {
+            background-color: rgba(0, 0, 0, .1);
+        }
+    }
+}
+
+dl {
+overflow: hidden;
+}
+
+dt, dd {
+    float: left;
+}
+
+dt {
+    clear: left;
+    width: 10em;
+    &:after {
+        content: ':';
+    }
+}
+
+dd {
+    margin-left: 0;
+}

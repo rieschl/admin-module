@@ -3,13 +3,18 @@ form.labels-top .form-row {
   form.labels-top .form-row:last-of-type {
     margin-bottom: 0; }
 form.labels-right .form-row, form.labels-left .form-row {
-  display: flex; }
+  display: flex;
+  margin-bottom: 0.75rem; }
+  form.labels-right .form-row.submit, form.labels-left .form-row.submit {
+    padding-left: 10em; }
 form.labels-right label, form.labels-right .label, form.labels-left label, form.labels-left .label {
   width: 10em; }
 
 label:after, .label:after {
   content: ':'; }
 
+input[type=text] {
+  min-width: 20em; }
 input[type=submit] {
   color: inherit;
   text-decoration: inherit;

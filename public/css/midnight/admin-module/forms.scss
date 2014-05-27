@@ -10,11 +10,16 @@ form {
         }
     }
     &.labels-right, &.labels-left {
+        $label-width: 10em;
         .form-row {
             display: flex;
+            margin-bottom: lh(.5);
+            &.submit {
+                padding-left: $label-width;
+            }
         }
         label, .label {
-            width: 10em;
+            width: $label-width;
         }
     }
 }
@@ -26,6 +31,9 @@ label, .label {
 }
 
 input {
+    &[type=text] {
+        min-width: 20em;
+    }
     &[type=submit] {
         @include button-primary;
     }
