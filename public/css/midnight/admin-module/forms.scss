@@ -43,7 +43,7 @@ input {
 }
 
 .form-row {
-    &.radio {
+    &.radio, &.checkbox {
         input[type=radio] {
             display: inline-block;
             margin-right: .2em;

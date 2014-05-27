@@ -41,13 +41,13 @@ input[type=submit] {
 input[type=radio] {
   cursor: pointer; }
 
-.form-row.radio input[type=radio] {
+.form-row.radio input[type=radio], .form-row.checkbox input[type=radio] {
   display: inline-block;
   margin-right: .2em; }
-.form-row.radio label {
+.form-row.radio label, .form-row.checkbox label {
   display: inline-block;
   margin-right: 1.5rem;
   cursor: pointer; }
-  .form-row.radio label:after {
+  .form-row.radio label:after, .form-row.checkbox label:after {
     content: '';
     display: none; }
