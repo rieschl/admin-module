@@ -1,0 +1,41 @@
+@import "imports";
+
+.admin-tabs {
+    display: flex;
+    border: solid 1px lightgray;
+    border-radius: .2rem;
+    & > ul {
+        @include list-killer;
+        background-color: rgba(0, 0, 0, .03);
+        width: 15em;
+        a {
+            display: block;
+            line-height: 1;
+            padding: lh(.5) lh(.7);
+            border-bottom: solid 1px lightgray;
+            text-decoration: inherit;
+            color: inherit;
+            &:hover {
+                background-color: white;
+            }
+        }
+        li {
+            background-color: rgba(0, 0, 0, .03);
+            &.active {
+                font-weight: bold;
+                background-color: #ffffff;
+                position: relative;
+                width: calc(100% + 1px);
+            }
+        }
+    }
+    & > article {
+        display: none;
+        flex: 1 0 auto;
+        padding: lh(1);
+        border-left: solid 1px lightgray;
+        &.active {
+            display: block;
+        }
+    }
+}

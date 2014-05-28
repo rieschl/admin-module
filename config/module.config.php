@@ -36,6 +36,7 @@ return array(
             'adminForm' => 'Zend\Form\View\Helper\Form',
             'adminFormRow' => 'Midnight\AdminModule\View\Helper\Form\FormRow',
             'formRow' => 'Midnight\AdminModule\View\Helper\Form\FormRow',
+            'adminTabs' => 'Midnight\AdminModule\View\Helper\AdminTabs',
         ),
     ),
     'zfc_rbac' => array(

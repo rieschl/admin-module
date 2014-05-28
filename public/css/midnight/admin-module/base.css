@@ -24,12 +24,21 @@ button, a[href].button, input[type=submit] {
   button:focus, a[href].button:focus, input[type=submit]:focus {
     outline: none; }
 
+h2:first-child, h3:first-child {
+  margin-top: 0; }
+
 h2 {
   font-weight: normal;
   font-size: 1.2em;
   margin-bottom: 0;
   margin-top: 3rem;
   clear: left; }
+
+h3 {
+  font-size: inherit;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: .75rem; }
 
 table {
   width: 100%; }

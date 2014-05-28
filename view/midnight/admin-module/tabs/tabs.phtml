@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var \Zend\View\Renderer\PhpRenderer $this
+ * @var array                           $spec
+ */
+?>
+<ul>
+    <?php foreach ($spec['tabs'] as $key => $tab): ?>
+        <li>
+            <a href="#<?= $key ?>"><?= $tab['label'] ?></a>
+        </li>
+    <?php endforeach ?>
+</ul>

@@ -1,0 +1,14 @@
+<?php
+/**
+ * @var \Zend\View\Renderer\PhpRenderer $this
+ * @var array                           $spec
+ */
+$this->inlineScript()
+    ->appendFile($this->basePath('js/midnight/admin-module/tabs.js'));
+$this->headLink()
+    ->appendStylesheet($this->basePath('css/midnight/admin-module/tabs.css'));
+?>
+<div class="admin-tabs">
+    <?= $this->render('midnight/admin-module/tabs/tabs.phtml') ?>
+    <?= $this->render('midnight/admin-module/tabs/content.phtml') ?>
+</div>

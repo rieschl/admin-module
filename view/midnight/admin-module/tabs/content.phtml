@@ -1,0 +1,19 @@
+<?php
+/**
+ * @var \Zend\View\Renderer\PhpRenderer $this
+ * @var array                           $spec
+ */
+?>
+<?php foreach ($spec['tabs'] as $key => $tab): ?>
+    <a id="<?= $key ?>"></a>
+    <article>
+        <?php if (!empty($tab['template'])): ?>
+            <?php
+            if(empty($tab['params'])) {
+                $tab['params'] = array();
+            }
+            ?>
+            <?= $this->partial($tab['template'], $tab['params']) ?>
+        <?php endif ?>
+    </article>
+<?php endforeach ?>
