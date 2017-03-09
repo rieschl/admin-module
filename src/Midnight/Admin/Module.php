@@ -5,7 +5,7 @@ namespace Midnight\Admin;
 use Zend\Authentication\AuthenticationService;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
-use Zend\Session\Container;
+use Zend\Stdlib\RequestInterface;
 
 class Module
 {
@@ -27,7 +27,10 @@ class Module
                     $route_name = $e->getRouteMatch()->getMatchedRouteName();
                     $parts = explode('/', $route_name);
                     if ($parts[0] === 'zfcadmin') {
-                        $url = $e->getRouter()->assemble(array(), array('name' => 'user/login'));
+                        $url = $e->getRouter()->assemble([], [
+                            'name' => 'user/login',
+                            'query' => $this->createLoginQueryParameter($e->getRequest()),
+                        ]);
                         $response = $e->getResponse();
                         $response->getHeaders()->addHeaderLine('Location', $url);
                         $response->setStatusCode(302);
@@ -52,6 +55,11 @@ class Module
                 }
             }
         );
+    }
+
+    private function createLoginQueryParameter(RequestInterface $request)
+    {
+        return $request instanceof \Zend\Http\PhpEnvironment\Request ? ['next' => $request->getRequestUri()] : [];
     }
 
     public function getConfig()
