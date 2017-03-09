@@ -30,7 +30,7 @@ class Module
                         $url = $e->getRouter()->assemble([],
                             [
                                 'name' => 'user/login',
-                                'query' => $this->createNextQueryParameter($e->getRequest()),
+                                'query' => $this->createLoginQueryParameter($e->getRequest()),
                             ]);
                         $response = $e->getResponse();
                         $response->getHeaders()->addHeaderLine('Location', $url);
@@ -74,16 +74,12 @@ class Module
         );
     }
 
-    private function createNextQueryParameter($request)
+    private function createLoginQueryParameter($request)
     {
-        $return = [];
-
-        if (!$request instanceof \Zend\Http\PhpEnvironment\Request) {
-            return $return;
+        if ($request instanceof \Zend\Http\PhpEnvironment\Request) {
+            return ['next' => $request->getRequestUri()];
         }
 
-        $return['next'] = $request->getRequestUri();
-
-        return $return;
+        return [];
     }
 }
