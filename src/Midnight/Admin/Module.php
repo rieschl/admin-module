@@ -27,11 +27,11 @@ class Module
                     $route_name = $e->getRouteMatch()->getMatchedRouteName();
                     $parts = explode('/', $route_name);
                     if ($parts[0] === 'zfcadmin') {
-                        $routeMatch = $e->getRouteMatch();
-                        $urlParams = $this->extractParams($routeMatch->getParams());
-                        $router = $e->getRouter();
-                        $next = $router->assemble($urlParams, ['name' => $route_name]);
-                        $url = $router->assemble([], ['name' => 'user/login', 'query' => ['next' => $next]]);
+                        $url = $e->getRouter()->assemble([],
+                            [
+                                'name' => 'user/login',
+                                'query' => $this->createNextQueryParameter($e->getRequest()),
+                            ]);
                         $response = $e->getResponse();
                         $response->getHeaders()->addHeaderLine('Location', $url);
                         $response->setStatusCode(302);
@@ -74,17 +74,16 @@ class Module
         );
     }
 
-    private function extractParams($params)
+    private function createNextQueryParameter($request)
     {
-        return array_filter($params,
-            function ($key) {
-                if (in_array($key, ['action', 'controller'])) {
-                    return false;
-                }
+        $return = [];
 
-                return true;
-            },
-            ARRAY_FILTER_USE_KEY);
+        if (!$request instanceof \Zend\Http\PhpEnvironment\Request) {
+            return $return;
+        }
+
+        $return['next'] = $request->getRequestUri();
+
+        return $return;
     }
-
 }
