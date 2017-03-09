@@ -27,7 +27,11 @@ class Module
                     $route_name = $e->getRouteMatch()->getMatchedRouteName();
                     $parts = explode('/', $route_name);
                     if ($parts[0] === 'zfcadmin') {
-                        $url = $e->getRouter()->assemble(array(), array('name' => 'user/login'));
+                        $routeMatch = $e->getRouteMatch();
+                        $urlParams = $this->extractParams($routeMatch->getParams());
+                        $router = $e->getRouter();
+                        $next = $router->assemble($urlParams, ['name' => $route_name]);
+                        $url = $router->assemble([], ['name' => 'user/login', 'query' => ['next' => $next]]);
                         $response = $e->getResponse();
                         $response->getHeaders()->addHeaderLine('Location', $url);
                         $response->setStatusCode(302);
@@ -69,4 +73,18 @@ class Module
             ),
         );
     }
+
+    private function extractParams($params)
+    {
+        return array_filter($params,
+            function ($key) {
+                if (in_array($key, ['action', 'controller'])) {
+                    return false;
+                }
+
+                return true;
+            },
+            ARRAY_FILTER_USE_KEY);
+    }
+
 }
